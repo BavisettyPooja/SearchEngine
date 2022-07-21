@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import ReactPlayer from 'react-player';
-
 import { useStateContext } from '../contexts/StateContextProvider';
 import Loading from './Loader';
- const Results = () => {
+
+const Results = () => {
   const { results, loading, getResults, searchTerm } = useStateContext();
   const location = useLocation();
 
@@ -12,7 +12,11 @@ import Loading from './Loader';
     if (searchTerm !== '') {
       if (location.pathname === '/videos') {
         getResults(`/search/q=${searchTerm} videos`);
-      } else {
+      }
+      if (location.pathname === '/images') {
+        getResults(`${location.pathname}/q=${searchTerm}`);
+      }
+       else {
         getResults(`${location.pathname}/q=${searchTerm}&num=40`);
       }
     }
@@ -37,6 +41,7 @@ import Loading from './Loader';
     case '/images':
       return (
         <div className="flex flex-wrap justify-center items-center">
+          {console.log(results)}
           {results?.image_results?.map(({ image, link: { href, title } }, index) => (
             <a href={href} target="_blank" key={index} rel="noreferrer" className="sm:p-3 p-5">
               <img src={image?.src} alt={title} loading="lazy" />
