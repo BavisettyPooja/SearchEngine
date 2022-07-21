@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BavisettyPooja/SearchEngine/static/css/main.fa7b70bb.css",
+    "main.js": "/BavisettyPooja/SearchEngine/static/js/main.c259d3c0.js",
+    "index.html": "/BavisettyPooja/SearchEngine/index.html",
+    "main.fa7b70bb.css.map": "/BavisettyPooja/SearchEngine/static/css/main.fa7b70bb.css.map",
+    "main.c259d3c0.js.map": "/BavisettyPooja/SearchEngine/static/js/main.c259d3c0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fa7b70bb.css",
+    "static/js/main.c259d3c0.js"
+  ]
+}
